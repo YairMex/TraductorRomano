@@ -38,3 +38,12 @@
     width: 100%; 
     box-sizing: border-box;
 }
+
+
+@media screen and (max-width: 500px) {
+    .single-column {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+}

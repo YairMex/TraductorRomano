@@ -9,7 +9,7 @@
     <div *ngIf="errorMessage" class="alert alert-danger mt-3">
       {{ errorMessage }}
     </div>
-    <div class="roman-grid">
+    <div class="roman-grid" [ngClass]="{'single-column': windowWidth <= 500}">
         <div *ngFor="let item of translations; let i = index">
             <app-roman-display [roman]="item.roman" [decimal]="item.decimal" (delete)="deleteTranslation(i)" (edit)="editTranslation(i, $event)"></app-roman-display>
         </div>

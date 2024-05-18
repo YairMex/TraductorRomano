@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-roman-input',
@@ -9,6 +9,16 @@ export class RomanInputComponent {
   romanInput: string = '';
   errorMessage: string | null = null;
   translations: { roman: string, decimal: number }[] = [];
+  windowWidth: number;
+
+  constructor() {
+    this.windowWidth = window.innerWidth;
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event) {
+    this.windowWidth = (event.target as Window).innerWidth;
+  }
 
   validateRomanNumeral() {
     const romanRegex = /^(?=[MDCLXVI])M*(C[MD]|D?C{0,3})(X[CL]|L?X{0,3})(I[XV]|V?I{0,3})$/i;
