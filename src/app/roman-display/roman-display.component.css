@@ -7,3 +7,15 @@
     min-height: 50px; 
     margin-bottom: 10px;
 }
+
+.custom-outline-secondary {
+    border: 1px solid #6c757d; 
+    color: #6c757d;           
+}
+
+.custom-outline-secondary:hover {
+    background-color: #6c757d; 
+    border-color: #5a6268;     
+    color: #5a6268;            
+}
+

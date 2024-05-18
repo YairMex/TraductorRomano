@@ -1,9 +1,9 @@
 <div class="roman-display">
     <div *ngIf="!isEditing">
-      <p>El número romano es: {{ roman }}</p>
-      <p>El número decimal es: {{ decimal }}</p>
-      <button class="btn btn-danger btn-sm float-end" (click)="onDelete()">Eliminar</button>
-      <button class="btn btn-secondary btn-sm float-end me-2" (click)="onEdit()">Editar</button>
+      <p>👉 El número romano es: {{ roman }}</p>
+      <p>👉 El número decimal es: {{ decimal }}</p>
+      <button class="btn btn-light custom-outline-secondary btn-sm float-end" (click)="onDelete()">❌</button>
+      <button class="btn btn-light custom-outline-secondary btn-sm float-end me-2" (click)="onEdit()">✏️</button>
     </div>
     <div *ngIf="isEditing">
       <input [(ngModel)]="editedRoman" class="form-control d-inline-block w-75">
