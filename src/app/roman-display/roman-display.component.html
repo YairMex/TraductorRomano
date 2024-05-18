@@ -1,0 +1,13 @@
+<div class="roman-display">
+    <div *ngIf="!isEditing">
+      <p>El número romano es: {{ roman }}</p>
+      <p>El número decimal es: {{ decimal }}</p>
+      <button class="btn btn-danger btn-sm float-end" (click)="onDelete()">Eliminar</button>
+      <button class="btn btn-secondary btn-sm float-end me-2" (click)="onEdit()">Editar</button>
+    </div>
+    <div *ngIf="isEditing">
+      <input [(ngModel)]="editedRoman" class="form-control d-inline-block w-75">
+      <button class="btn btn-success btn-sm float-end" (click)="saveEdit()">Guardar</button>
+      <button class="btn btn-secondary btn-sm float-end me-2" (click)="cancelEdit()">Cancelar</button>
+    </div>
+  </div>
