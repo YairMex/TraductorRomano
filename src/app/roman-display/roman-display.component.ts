@@ -8,6 +8,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 export class RomanDisplayComponent {
   @Input() roman: string = '';
   @Input() decimal: number = 0;
+  @Input() isDarkMode: boolean = false;
   @Output() delete = new EventEmitter<void>();
   @Output() edit = new EventEmitter<{roman: string, decimal: number}>();
 

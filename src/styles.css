@@ -11,3 +11,24 @@
       align-items: center;
     }
 }
+
+/* Tema oscuro */
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.container.dark-mode {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+.roman-card.dark-mode {
+  border: 1px solid #444;
+  background-color: #2e2e2e;
+}
+
+button.dark-mode {
+  background-color: #444;
+  color: #ffffff;
+}

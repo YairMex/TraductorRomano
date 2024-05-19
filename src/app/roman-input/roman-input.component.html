@@ -1,17 +1,21 @@
 <div class="container">
-    <h1 class="mt-5 mb-4">Traductor de números romanos</h1>
-    <form (ngSubmit)="validateRomanNumeral()" class="mb-4">
-        <div class="input-group mb-3">
-            <input type="text" id="romanInput" [(ngModel)]="romanInput" name="romanInput" class="form-control" placeholder="Ingresar número romano:" aria-label="Ingresar número romano:" aria-describedby="button-addon2">
-            <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Traducir</button>
-        </div>
-    </form>
-    <div *ngIf="errorMessage" class="alert alert-danger mt-3">
-      {{ errorMessage }}
+  <h1 class="mt-5 mb-4">Traductor de números romanos</h1>
+  <form (ngSubmit)="validateRomanNumeral()" class="mb-4 d-flex align-items-center">
+    <div class="input-group">
+      <input type="text" id="romanInput" [(ngModel)]="romanInput" name="romanInput" class="form-control" placeholder="Ingresar número romano:" aria-label="Ingresar número romano:" aria-describedby="button-addon2">
+      <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Traducir</button>
     </div>
-    <div class="roman-grid" [ngClass]="{'single-column': windowWidth <= 500}">
-        <div *ngFor="let item of translations; let i = index">
-            <app-roman-display [roman]="item.roman" [decimal]="item.decimal" (delete)="deleteTranslation(i)" (edit)="editTranslation(i, $event)"></app-roman-display>
-        </div>
+    <button class="btn btn-outline-secondary me-3" type="button" (click)="toggleDarkMode()">
+      {{ isDarkMode ? '☀️' : '🌘' }}
+    </button>
+  </form>
+  <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+    {{ errorMessage }}
+  </div>
+  <div class="roman-grid" [ngClass]="{'single-column': windowWidth <= 500}">
+    <div *ngFor="let item of translations; let i = index">
+      <app-roman-display [roman]="item.roman" [decimal]="item.decimal" [isDarkMode]="isDarkMode" (delete)="deleteTranslation(i)" (edit)="editTranslation(i, $event)"></app-roman-display>
     </div>
+  </div>
 </div>
+

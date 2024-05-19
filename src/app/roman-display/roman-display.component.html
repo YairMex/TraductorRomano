@@ -1,4 +1,4 @@
-<div class="roman-display">
+<div [ngClass]="{'roman-display': true, 'dark-mode': isDarkMode}">
     <div *ngIf="!isEditing">
       <p>👉 El número romano es: {{ roman }}</p>
       <p>👉 El número decimal es: {{ decimal }}</p>

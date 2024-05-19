@@ -10,6 +10,7 @@ export class RomanInputComponent {
   errorMessage: string | null = null;
   translations: { roman: string, decimal: number }[] = [];
   windowWidth: number;
+  isDarkMode: boolean = false;
 
   constructor() {
     this.windowWidth = window.innerWidth;
@@ -18,6 +19,15 @@ export class RomanInputComponent {
   @HostListener('window:resize', ['$event'])
   onResize(event: Event) {
     this.windowWidth = (event.target as Window).innerWidth;
+  }
+
+  toggleDarkMode() {
+    this.isDarkMode = !this.isDarkMode;
+    if (this.isDarkMode) {
+      document.body.classList.add('dark-mode');
+    } else {
+      document.body.classList.remove('dark-mode');
+    }
   }
 
   validateRomanNumeral() {
